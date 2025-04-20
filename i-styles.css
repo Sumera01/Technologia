@@ -1,0 +1,1054 @@
+/* Color Variables */
+:root {
+    --primary: #9a0000;
+    --secondary: #af996c;
+    --light: #e4ddcb;
+    --dark: #666666;
+    --bg: #121212;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--light);
+    overflow-x: hidden;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #121212, #1a1a1a, #2c1e1e, #121212);
+    background-size: 400%;
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Custom Cursor (Desktop Only) */
+html {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(154, 0, 0, 0.3);
+    border: 2px solid #9a0000;
+    box-shadow: 0 0 10px #9a0000,
+        0 0 20px #9a0000,
+        0 0 30px rgba(154, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
+    mix-blend-mode: screen;
+}
+
+.custom-cursor-follower {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(154, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease;
+}
+
+.custom-cursor.active {
+    width: 40px;
+    height: 40px;
+    background: rgba(154, 0, 0, 0.2);
+}
+
+.custom-cursor.click {
+    animation: cursorClick 0.5s ease;
+}
+
+@keyframes cursorClick {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(175, 153, 108, 0.7);
+}
+
+.preloader-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(175, 153, 108, 0.2);
+    transform: translateY(-100%);
+    animation: slideDown 1s 1.5s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Logo Container & Hover Effect */
+.logo-container {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo-container:hover .logo-image {
+    animation: pulse 1.5s infinite;
+}
+
+.logo-image {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-image {
+    transform: scale(1.1);
+}
+
+.logo-container:hover {
+    filter: drop-shadow(0 0 8px rgba(175, 153, 108, 0.5));
+}
+
+/* Technologia Text with 2025 on top */
+.technologia-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1;
+    margin-left: 3px;
+}
+
+.technologia-text .year {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-bottom: -2px;
+    letter-spacing: 2px;
+}
+
+.technologia-text:hover .year {
+    color: var(--primary);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.technologia-text:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Corner Ribbon */
+.corner-ribbon {
+    position: fixed;
+    top: 20px;
+    right: -50px;
+    width: 200px;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    transform: rotate(45deg);
+    z-index: 101;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Prize Badge (Mobile Only) */
+.prize-badge {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.5s forwards;
+    margin-top: 30px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.7s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.9s forwards;
+    min-width: 120px;
+    text-align: center;
+}
+
+.cta-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Floating Download Button */
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-button:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.floating-button i {
+    font-size: 1.2rem;
+}
+
+/* Floating Calendar Button */
+.calendar-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 80px;
+}
+
+.calendar-button::before {
+    content: "📅";
+    font-size: 1.5rem;
+}
+
+.calendar-button span {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.calendar-button:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Events Section */
+.events-section {
+    padding: 100px 5%;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    color: var(--light);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.event-card {
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px) rotateX(20deg);
+}
+
+.event-card:nth-child(1) {
+    animation: cardAppear 1s 0.3s forwards;
+}
+
+.event-card:nth-child(2) {
+    animation: cardAppear 1s 0.4s forwards;
+}
+
+.event-card:nth-child(3) {
+    animation: cardAppear 1s 0.5s forwards;
+}
+
+.event-card:nth-child(4) {
+    animation: cardAppear 1s 0.6s forwards;
+}
+
+.event-card:nth-child(5) {
+    animation: cardAppear 1s 0.7s forwards;
+}
+
+.event-card:nth-child(6) {
+    animation: cardAppear 1s 0.8s forwards;
+}
+
+.event-card:nth-child(7) {
+    animation: cardAppear 1s 0.9s forwards;
+}
+
+.event-card:nth-child(8) {
+    animation: cardAppear 1s 1.0s forwards;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+.event-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(154, 0, 0, 0.4);
+}
+
+.event-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.1);
+}
+
+.event-content {
+    padding: 20px;
+}
+
+.event-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--secondary);
+}
+
+.event-content p {
+    color: var(--light);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.event-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background: transparent;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.event-button:hover {
+    background: var(--secondary);
+    color: var(--bg);
+}
+
+/* Footer with Hover Effects */
+footer {
+    padding: 50px 5% 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.footer-section:hover {
+    background: rgba(154, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.footer-section:hover h3 {
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.footer-section p,
+.footer-section a {
+    color: var(--light);
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section:hover p,
+.footer-section:hover a {
+    color: var(--light);
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: var(--light);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+    background: rgba(154, 0, 0, 0.2);
+    transform: scale(1.2) rotate(10deg);
+}
+
+.copyright {
+    color: var(--dark);
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid var(--dark);
+    transition: all 0.3s ease;
+}
+
+footer:hover .copyright {
+    color: var(--light);
+}
+
+/* Floating Particles */
+.particle {
+    position: absolute;
+    background: var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(154, 0, 0, 0.5);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-60px) translateX(30px);
+    }
+
+    50% {
+        transform: translateY(0) translateX(50px);
+    }
+
+    75% {
+        transform: translateY(60px) translateX(30px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .preloader-text{
+        font-size: 1.2rem;
+    }
+    /* Disable custom cursor on mobile */
+    html {
+        cursor: default;
+    }
+
+    .custom-cursor,
+    .custom-cursor-follower {
+        display: none;
+    }
+
+    /* Hide corner ribbon on mobile */
+    .corner-ribbon {
+        display: none;
+    }
+
+    /* Show prize badge on mobile */
+    .prize-badge {
+        display: block;
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        z-index: 101;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        min-width: 120px;
+    }
+
+    /* Navigation */
+    nav {
+        height: 70px;
+        padding: 10px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo-image {
+        height: 50px;
+    }
+
+    .technologia-text {
+        font-size: 1.2rem;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .technologia-text .year {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+
+    /* Hamburger Menu (assumes JS toggle) */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(18, 18, 18, 0.9);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--light);
+        background: none;
+        border: none;
+        cursor: default;
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 0 5%;
+        justify-content: center;
+        text-align: center;
+        padding-top: 80px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        margin-top: 20px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Events Section */
+    .events-section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .event-image {
+        height: 200px;
+    }
+
+    .event-content {
+        padding: 15px;
+    }
+
+    .event-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .event-content p {
+        font-size: 0.95rem;
+    }
+
+    .event-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Floating Buttons */
+    .floating-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        min-width: 120px;
+        justify-content: center;
+    }
+
+    .floating-button i {
+        font-size: 1rem;
+    }
+
+    .calendar-button {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px;
+        font-size: 0.9rem;
+        width: 70px;
+        min-height: 70px;
+        justify-content: center;
+    }
+
+    .calendar-button::before {
+        font-size: 1.3rem;
+    }
+
+    .calendar-button span {
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 40px 5% 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.95rem;
+    }
+
+    .social-links a {
+        font-size: 1.1rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    .copyright {
+        font-size: 0.85rem;
+    }
+
+    /* Disable heavy animations for performance */
+    .particle {
+        display: none;
+    }
+
+    .event-card {
+        transform: none;
+        animation: none;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 70px;
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-top: 20px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .floating-button {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+        min-height: 44px;
+        min-width: 100px;
+    }
+
+    .floating-button i {
+        font-size: 0.9rem;
+    }
+
+    .calendar-button {
+        padding: 8px;
+        width: 60px;
+        min-height: 60px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .calendar-button::before {
+        font-size: 1.2rem;
+    }
+
+    .calendar-button span {
+        font-size: 0.7rem;
+    }
+
+    .prize-badge {
+        top: 70px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        border-radius: 15px;
+        min-width: 100px;
+    }
+
+    .technologia-text {
+        font-size: 1rem;
+    }
+
+    .technologia-text .year {
+        font-size: 0.6rem;
+    }
+
+    .event-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .event-content p {
+        font-size: 0.9rem;
+    }
+
+    .event-button {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+        min-height: 44px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+/* Cursor Overrides */
+a,
+button,
+.event-card,
+.floating-button,
+.calendar-button {
+    cursor: none !important;
+}
+
+@media (max-width: 768px) {
+
+    a,
+    button,
+    .event-card,
+    .floating-button,
+    .calendar-button {
+        cursor: default !important;
+    }
+}
