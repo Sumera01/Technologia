@@ -986,6 +986,6 @@ footer:hover .copyright {
 @media (max-width: 768px) {
     .technologia-section::before {
         background-image: url('clg.jpeg');
-        opacity: 0.15; /* Slightly less opacity for mobile */
+        opacity: 0.2; /* Slightly less opacity for mobile */
     }
 }
