@@ -245,7 +245,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10% 10%;
+    padding: 0% 10%;
     position: relative;
     overflow: hidden;
 }
@@ -268,7 +268,9 @@ nav {
     transform: translateY(50px);
     animation: fadeUp 1s 0.7s forwards;
 }
-
+#heading2{
+    font-size: 2rem;
+}
 @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
 }
