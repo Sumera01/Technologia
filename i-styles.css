@@ -512,7 +512,9 @@ footer:hover .copyright {
         padding: 10px 5%;
         flex-wrap: wrap;
     }
-
+#heading2{
+    font-size: 1.5rem;
+}
     .logo-image { height: 50px; }
     .technologia-text {
         font-size: 1.2rem;
