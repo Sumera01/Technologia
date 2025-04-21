@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZYR7XRENF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7ZYR7XRENF');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNOLOGIA 2025 | D.Y. Patil SEM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #9a0000;
+    --secondary: #af996c;
+    --light: #e4ddcb;
+    --dark: #666666;
+    --bg: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--light);
+    overflow-x: hidden;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #121212, #1a1a1a, #2c1e1e, #121212);
+    background-size: 400%;
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+html {
+    cursor: default;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(154, 0, 0, 0.3);
+    border: 2px solid #9a0000;
+    box-shadow: 0 0 10px #9a0000, 0 0 20px #9a0000, 0 0 30px rgba(154, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
+    mix-blend-mode: screen;
+}
+
+.custom-cursor-follower {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(154, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease;
+}
+
+.custom-cursor.active {
+    width: 40px;
+    height: 40px;
+    background: rgba(154, 0, 0, 0.2);
+}
+
+.custom-cursor.click {
+    animation: cursorClick 0.5s ease;
+}
+
+@keyframes cursorClick {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(0.7); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(175, 153, 108, 0.7);
+}
+
+.preloader-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+    100% { transform: scaleX(0); transform-origin: right; }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(175, 153, 108, 0.2);
+    transform: translateY(-100%);
+    animation: slideDown 1s 1.5s forwards;
+}
+
+@keyframes slideDown {
+    to { transform: translateY(0); }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.logo-container:hover .logo-image {
+    animation: pulse 1.5s infinite;
+}
+
+.logo-image {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-image {
+    transform: scale(1.1);
+}
+
+.logo-container:hover {
+    filter: drop-shadow(0 0 8px rgba(175, 153, 108, 0.5));
+}
+
+.technologia-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1;
+    margin-left: 3px;
+}
+
+.technologia-text .year {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-bottom: -2px;
+    letter-spacing: 2px;
+}
+
+.technologia-text:hover .year {
+    color: var(--primary);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.technologia-text:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.corner-ribbon {
+    position: fixed;
+    top: 20px;
+    right: -50px;
+    width: 200px;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    transform: rotate(45deg);
+    z-index: 101;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.prize-badge {
+    display: none;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.5s forwards;
+    margin-top: 30px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.7s forwards;
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.9s forwards;
+    min-width: 120px;
+    text-align: center;
+}
+
+.cta-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-button:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.floating-button i {
+    font-size: 1.2rem;
+}
+
+.calendar-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 80px;
+}
+
+.calendar-button::before {
+    content: "📅";
+    font-size: 1.5rem;
+}
+
+.calendar-button span {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.calendar-button:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+    .back-home {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.back-home:hover {
+    transform: scale(1.2);
+    background: var(--secondary);
+}
+
+footer {
+    padding: 50px 5% 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.footer-section:hover {
+    background: rgba(154, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.footer-section:hover h3 {
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.footer-section p,
+.footer-section a {
+    color: var(--light);
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section:hover p,
+.footer-section:hover a {
+    color: var(--light);
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: var(--light);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+    background: rgba(154, 0, 0, 0.2);
+    transform: scale(1.2) rotate(10deg);
+}
+
+.copyright {
+    color: var(--dark);
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid var(--dark);
+    transition: all 0.3s ease;
+}
+
+footer:hover .copyright {
+    color: var(--light);
+}
+
+.particle {
+    position: absolute;
+    background: var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(154, 0, 0, 0.5);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-60px) translateX(30px); }
+    50% { transform: translateY(0) translateX(50px); }
+    75% { transform: translateY(60px) translateX(30px); }
+}
+
+@media (max-width: 768px) {
+    .preloader-text { font-size: 1.2rem; }
+    .custom-cursor, .custom-cursor-follower { display: none; }
+    .corner-ribbon { display: none; }
+    .prize-badge {
+        display: block;
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        z-index: 101;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        min-width: 120px;
+    }
+
+    nav {
+        height: 70px;
+        padding: 10px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo-image { height: 50px; }
+    .technologia-text {
+        font-size: 1.2rem;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .technologia-text .year {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(18, 18, 18, 0.9);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+    }
+
+    .nav-menu.active { display: flex; }
+
+
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .floating-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        min-width: 120px;
+        justify-content: center;
+    }
+
+    .floating-button i { font-size: 1rem; }
+
+    .calendar-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+        font-size: 0.9rem;
+        width: 70px;
+        min-height: 70px;
+        justify-content: center;
+    }
+    .back-home {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .calendar-button::before { font-size: 1.3rem; }
+    .calendar-button span { font-size: 0.8rem; }
+
+    footer { padding: 40px 5% 20px; }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-section h3 { font-size: 1.2rem; }
+    .footer-section p, .footer-section a { font-size: 0.95rem; }
+    .social-links a {
+        font-size: 1.1rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    .copyright { font-size: 0.85rem; }
+    .particle { display: none; }
+}
+
+/* Events Section */
+.events-section {
+    padding: 100px 5%;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    color: var(--light);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.event-card {
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px) rotateX(20deg);
+}
+
+.event-card:nth-child(1) {
+    animation: cardAppear 1s 0.3s forwards;
+}
+
+.event-card:nth-child(2) {
+    animation: cardAppear 1s 0.4s forwards;
+}
+
+.event-card:nth-child(3) {
+    animation: cardAppear 1s 0.5s forwards;
+}
+
+.event-card:nth-child(4) {
+    animation: cardAppear 1s 0.6s forwards;
+}
+
+.event-card:nth-child(5) {
+    animation: cardAppear 1s 0.7s forwards;
+}
+
+.event-card:nth-child(6) {
+    animation: cardAppear 1s 0.8s forwards;
+}
+
+.event-card:nth-child(7) {
+    animation: cardAppear 1s 0.9s forwards;
+}
+
+.event-card:nth-child(8) {
+    animation: cardAppear 1s 1.0s forwards;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+.event-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(154, 0, 0, 0.4);
+}
+
+.event-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.1);
+}
+
+.event-content {
+    padding: 20px;
+}
+
+.event-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--secondary);
+}
+
+.event-content p {
+    color: var(--light);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.event-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background: transparent;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.event-button:hover {
+    background: var(--secondary);
+    color: var(--bg);
+}
+
+
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-text">TECHNOLOGIA</div>
+    </div>
+
+    <!-- Corner Ribbon (Desktop Only) -->
+    <div class="corner-ribbon">
+        <span>Prize Pool: ₹1L</span>
+    </div>
+
+    <!-- Prize Badge (Mobile Only) -->
+    <div class="prize-badge">
+        ₹1 Lakh Prize Pool
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="D.Y. Patil Logo" class="logo-image">
+        </div>
+        <div class="technologia-text">
+            <span class="year">2025</span>
+            <span>TECHNOLOGIA</span>
+        </div>
+    </nav>
+
+    <section class="events-section" id="events">
+        <h2 class="section-title">OUR EVENTS</h2>
+        <div class="events-grid">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <img src="1.png" alt="Sh Rosé" class="event-image">
+                <div class="event-content">
+                    <h3>Shark Tank</h3>
+                    <p>Pitch your best business ideas to the judges to prove your entrepreneurship skills.</p>
+                    <a href="shark-tank.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Event 2 -->
+            <div class="event-card">
+                <img src="2.jpg" alt="Code Shuffle" class="event-image">
+                <div class="event-content">
+                    <h3>Code Shuffle</h3>
+                    <p>Test your Python skills in this intense coding competition with quizzes and challenges.</p>
+                    <a href="code-shuffle.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Event 3 -->
+            <div class="event-card">
+                <img src="3.png" alt="Mini Project Exhibition" class="event-image">
+                <div class="event-content">
+                    <h3>Mini Project Exhibition</h3>
+                    <p>Showcase your creativity, innovation, and technical skills through a mini project based on real-world problems.</p>
+                    <a href="project-exhibition.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Event 4 -->
+            <div class="event-card">
+                <img src="4.png" alt="IPL Auction" class="event-image">
+                <div class="event-content">
+                    <h3>IPL Auction</h3>
+                    <p>Build your dream team with a virtual budget of ₹120 crore.</p>
+                    <a href="auction.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Event 5 -->
+            <div class="event-card">
+                <img src="5.png" alt="Debate Competition" class="event-image">
+                <div class="event-content">
+                    <h3>Debate Competition</h3>
+                    <p>Express your ideas and arguments on important topics.</p>
+                    <a href="debate.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Event 6 -->
+            <div class="event-card">
+                <img src="7.jpg" alt="Expandables" class="event-image">
+                <div class="event-content">
+                    <h3>Expandables</h3>
+                    <p>Engage in team-building activities with exciting elimination rounds in the Expendables challenge.</p>
+                    <a href="expandables.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="6.png" alt="BGMI Tournament" class="event-image">
+                <div class="event-content">
+                    <h3>BGMI Tournament</h3>
+                    <p>Battle it out in our official BGMI competition with exciting prizes.</p>
+                    <a href="bgmi.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="8.jpg" alt="PES Tournament" class="event-image">
+                <div class="event-content">
+                    <h3>PES Tournament</h3>
+                    <p>Get ready for a thrilling experience in our official PES (Pro Evolution Soccer) tournament!</p>
+                    <a href="pes.html" class="event-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TECHNOLOGIA</h3>
+                <p>National level inter-collegiate competition for UG, PG, & Diploma students.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> D.Y. Patil School of Engineering & Management, Kolhapur</p>
+                <p><i class="fas fa-phone"></i> Harsh Patil: 7744059434</p>
+                <p><i class="fas fa-phone"></i> Zaid Naik: 7620483066</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 TECHNOLOGIA | D.Y. Patil School of Engineering & Management</p>
+        </div>
+    </footer>
+
+    <!-- Floating Download Button -->
+    <a href="index.html" class="back-home"><i class="fas fa-home"></i></a>
+
+    <!-- Floating Calendar Button -->
+    <div class="calendar-button">
+        <span>29 April</span>
+    </div>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.querySelector('.preloader').style.opacity = '0';
+                setTimeout(function () {
+                    document.querySelector('.preloader').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Floating Particles
+        document.addEventListener('DOMContentLoaded', function () {
+            const colors = ['#9a0000', '#af996c', '#e4ddcb'];
+            const particleCount = window.innerWidth <= 768 ? 0 : 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                const size = Math.random() * 6 + 2;
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const duration = Math.random() * 4 + 4;
+                const delay = Math.random() * 2;
+                const opacity = Math.random() * 0.5 + 0.3;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.background = color;
+                particle.style.opacity = opacity;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+
+                document.body.appendChild(particle);
+            }
+        });
+
+        // Custom Cursor (only for non-touch devices)
+        if (!('ontouchstart' in window)) {
+            document.documentElement.style.cursor = 'none';
+            const cursor = document.createElement('div');
+            const cursorFollower = document.createElement('div');
+            cursor.className = 'custom-cursor';
+            cursorFollower.className = 'custom-cursor-follower';
+            document.body.appendChild(cursor);
+            document.body.appendChild(cursorFollower);
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            });
+
+            document.querySelectorAll('a, button, .footer-section, .floating-button, .calendar-button').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', () => {
+                cursor.classList.add('click');
+                setTimeout(() => cursor.classList.remove('click'), 500);
+            });
+        }
+
+        
+    </script>
+</body>
+</html>
