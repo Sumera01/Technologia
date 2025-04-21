@@ -269,7 +269,7 @@ nav {
     animation: fadeUp 1s 0.7s forwards;
 }
 #heading2{
-    font-size: 2rem;
+    font-size: 3.5rem;
 }
 @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
