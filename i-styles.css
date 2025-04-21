@@ -257,7 +257,7 @@ nav {
     opacity: 0;
     transform: translateY(50px);
     animation: fadeUp 1s 0.5s forwards;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .hero p {
