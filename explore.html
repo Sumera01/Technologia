@@ -552,12 +552,18 @@ footer:hover .copyright {
         text-align: center;
         min-width: 120px;
     }
-
     nav {
-        height: 70px;
-        padding: 10px 5%;
-        flex-wrap: wrap;
-    }
+    height: 70px;
+    padding: 10px 5%;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+nav > * {
+    flex-shrink: 1; 
+    flex-grow: 0;  
+    flex-basis: auto; 
+}
 
     .logo-image { height: 50px; }
     .technologia-text {
