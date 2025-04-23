@@ -532,6 +532,10 @@ footer:hover .copyright {
 }
 
 @media (max-width: 768px) {
+    .events-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
     .preloader-text { font-size: 1.2rem; }
     .custom-cursor, .custom-cursor-follower { display: none; }
     .corner-ribbon { display: none; }
@@ -801,6 +805,16 @@ nav > * {
         transform: translateY(0);
     }
 }
+
+.events-subtitle {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0 auto 30px;
+        max-width: 800px;
+        font-weight: 400;
+    }
+
 </style>
 </head>
 <body>
@@ -831,7 +845,7 @@ nav > * {
 
     <section class="events-section" id="events">
         <h2 class="section-title">OUR EVENTS</h2>
-        <h5>All the events will commence approximately at the same time, we request you to participate accordingly</h5>
+        <h5 class="events-subtitle">All the events will commence approximately at the same time, we request you to participate accordingly</h5>
         <div class="events-grid">
             <!-- Event 1 -->
             <div class="event-card">
